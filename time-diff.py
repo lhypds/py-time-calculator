@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 
 # get user input
-startStr = input("Enter start time(H:M:S): ")
-endStr = input("Enter end time(H:M:S): ")
+startStr = input("Start time(H:M:S): ")
+endStr = input("End time(H:M:S): ")
 
 # convert time string to datetime
 start = datetime.strptime(startStr, '%H:%M:%S')
