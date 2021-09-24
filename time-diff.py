@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # get user input
 startStr = input("Enter start time(H:M:S): ")
@@ -9,7 +9,9 @@ start = datetime.strptime(startStr, '%H:%M:%S')
 end = datetime.strptime(endStr, '%H:%M:%S')
 
 # print result
-print("Start: " + str(start))
-print("End: " + str(end))
-print("Time diff: " + str(end - start))
-print("Seconds:" + str((end - start).total_seconds()))
+if end > start:
+    print("Time diff: " + str(end - start))
+    print("Seconds:" + str((end - start).total_seconds()))
+else:
+    print("Time diff: " + str(end - start + timedelta(days=1)))
+    print("Seconds: " + str((end - start).total_seconds() + 86400))
